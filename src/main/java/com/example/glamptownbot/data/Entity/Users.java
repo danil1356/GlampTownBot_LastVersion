@@ -1,18 +1,22 @@
 package com.example.glamptownbot.data.Entity;
 
-import jakarta.persistence.*;
-import lombok.Data;
+import javax.persistence.*;
+import lombok.Getter;
+import lombok.Setter;
 
 import java.sql.Timestamp;
 import java.util.Set;
 
 @Entity
 @Table(name = "users")
-@Data
+@Setter
+@Getter
+
+
 public class Users extends BaseEntity {
 
     @Column(name = "chat_id")
-    private String chat_id;
+    private String chatId;
 
     @Column(name = "first_name")
     private String first_name;
@@ -26,6 +30,7 @@ public class Users extends BaseEntity {
     @Column(name = "register_time")
     private Timestamp register_time;
 
+
     @OneToMany(fetch = FetchType.EAGER, cascade = CascadeType.ALL, mappedBy = "user")
     private Set<Rooms> rooms;
 
@@ -38,7 +43,7 @@ public class Users extends BaseEntity {
 
     public Users(Long id, String chat_id, String first_name, String last_name, String phone_number, Timestamp register_time) {
         super(id);
-        this.chat_id = chat_id;
+        this.chatId = chat_id;
         this.first_name = first_name;
         this.last_name = last_name;
         this.phone_number = phone_number;

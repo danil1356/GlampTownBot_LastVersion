@@ -1,11 +1,19 @@
 package com.example.glamptownbot.data.Entity;
 
-import jakarta.persistence.*;
 import lombok.Data;
+import lombok.Getter;
+import lombok.Setter;
+import lombok.ToString;
+
+import javax.persistence.*;
+import java.util.Set;
 
 @Entity
 @Table(name = "rooms")
-@Data
+@Setter
+@Getter
+
+
 public class Rooms extends BaseEntity{
 
     @Column(name = "description")
@@ -14,12 +22,21 @@ public class Rooms extends BaseEntity{
     @Column(name = "free", nullable = false)
     private Boolean free;
 
-    @Column(name = "price")
-    private String price;
+    @Column(name = "standard_price")
+    private String standard_price;
+
+    @Column(name = "weekend_price")
+    private String weekend_price;
+
+    @Column(name = "name")
+    private String name;
 
     @ManyToOne
     @JoinColumn(name = "users_id", referencedColumnName = "id")
     private Users user;
+
+    @OneToMany(fetch = FetchType.EAGER, cascade = CascadeType.ALL, mappedBy = "room")
+    private Set<ImgData> imgDataSet;
 
 
     public Rooms() {
@@ -29,11 +46,13 @@ public class Rooms extends BaseEntity{
         super(id);
     }
 
-    public Rooms(Long id, String description, Boolean free, String price, Users user) {
+    public Rooms(Long id, String description, Boolean free, String standard_price, String weekend_price,String name, Users user) {
         super(id);
         this.description = description;
         this.free = free;
-        this.price = price;
+        this.standard_price = standard_price;
+        this.weekend_price = weekend_price;
+        this.name = name;
         this.user = user;
     }
 }

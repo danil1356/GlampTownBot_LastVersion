@@ -1,0 +1,18 @@
+public ReplyKeyboardMarkup replyKeyboardMarkup() {
+        //String[][] text = {{"ЗАБРОНИРОВАТЬ НОМЕР","О ГЛЭМПИНГЕ"},{"РАЗВЛЕЧЕНИЯ","АРЕНДА БАНИ"},{"АРЕНДА ОБОРУДОВАНИЯ","КАК ДОБРАТЬСЯ"},{"ПАРОЛЬ ОТ WIFI","ОРГАНИЗАЦИЯ ЗАВТРАКА"},{"ПОЗВОНИТЬ"}};
+//        String[][] callBack = {{"BUTTON_1","BUTTON_2"},{"BUTTON_3","BUTTON_4"},{"BUTTON_5","BUTTON_6"},{"BUTTON_7","BUTTON_8"},{"BUTTON_9"}};
+//
+//        for (int i = 0; i <text.length; i++) {
+//            List<InlineKeyboardButton> rowLine = new ArrayList<>();
+//            for (int j = 0; j <text[i].length; j++) {
+//                var button = new InlineKeyboardButton();
+//                button.setText(String.valueOf(Emoji.CHECK.get())+" "+text[i][j]);
+//                button.setCallbackData(callBack[i][j]);
+//                rowLine.add(button);
+//            }
+//            rowsLine.add(rowLine);
+//        }
+        return null;
+    }
+
+    //        this.usersBaseService.save(new Users(null, String.valueOf(chatId),null,null,null,null));
